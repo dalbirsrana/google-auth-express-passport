@@ -1,0 +1,46 @@
+<!-- views/success.ejs -->
+<!doctype html>
+<html>
+  <head>
+    <title>Google SignIn</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"> <!-- load bootstrap css -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- load fontawesome -->
+      <style>
+          body        { padding-top:70px; }
+      </style>
+  </head>
+  <body>
+    <div class="container-sm">
+      <div class="jumbotron">
+            <h1 class="text-primary  text-center">
+              <span class="fa fa-user"></span> Profile Information
+            </h1>
+          <div style="display: flex; justify-content: center; align-items: center;">
+            <div>
+                <div style="text-align: center; margin-bottom: 2rem;">
+                    <img src=<%= user.photos[0].value %> alt="Profile pic" />
+                </div>
+                <div>                  
+                    <p>
+                        <strong>Id</strong>: <%= user.id %>
+                    </p>
+             
+                    <p>
+                        <strong>Email</strong>: <%= user.emails[0].value %>
+                    </p>
+                    <p>
+                        <strong>Name</strong>: <%= user.displayName %>
+                    </p>
+                    <p>
+                        <span style="max-width:600px; word-wrap:break-word; display:inline-block;"><strong>Access Token(showing few characters)</strong>:  <%= user.key %>... </span>
+                    </p>
+
+                    <p><a href="/logout">Logout</a></p>
+
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
